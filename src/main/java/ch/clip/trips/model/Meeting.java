@@ -1,5 +1,6 @@
-package ch.clip.trips.repo;
+package ch.clip.trips.model;
 
+import ch.clip.trips.model.BusinessTrip;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 

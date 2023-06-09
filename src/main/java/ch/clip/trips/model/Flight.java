@@ -1,5 +1,6 @@
-package ch.clip.trips.repo;
+package ch.clip.trips.model;
 
+import ch.clip.trips.model.Employee;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;

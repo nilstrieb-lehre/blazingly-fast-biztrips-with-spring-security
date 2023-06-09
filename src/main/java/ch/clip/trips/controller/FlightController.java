@@ -1,10 +1,10 @@
-package ch.clip.trips.repo;
+package ch.clip.trips.controller;
 
 import ch.clip.trips.ex.TriptNotFoundException;
+import ch.clip.trips.model.Flight;
+import ch.clip.trips.repo.FlightRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

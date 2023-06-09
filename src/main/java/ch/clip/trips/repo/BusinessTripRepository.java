@@ -1,5 +1,6 @@
 package ch.clip.trips.repo;
 
+import ch.clip.trips.model.BusinessTrip;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

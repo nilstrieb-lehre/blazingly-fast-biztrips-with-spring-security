@@ -1,11 +1,11 @@
-package ch.clip.trips.repo;
+package ch.clip.trips.controller;
 
 import ch.clip.trips.ex.TriptNotFoundException;
+import ch.clip.trips.model.Employee;
+import ch.clip.trips.repo.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +29,7 @@ public class EmployeeController {
 	// @RequestMapping(value = "/cart/items", method = RequestMethod.GET, produces =
 	// "application/json")
 	@GetMapping("/employees")
+	@PreAuthorize("hasAnyAuthority('ASSISTANT_MANAGER', 'MANAGER', 'ADMIN')")
 	List<Employee> allItems() {
 		System.out.println("hello employees");
 		return (List<Employee>) employeeRepository.findAll();
@@ -43,6 +44,7 @@ public class EmployeeController {
 	 */
 	@CrossOrigin(origins = "http://localhost:3001")
 	@PostMapping("/employees")
+	@PreAuthorize("hasAnyAuthority('ASSISTANT_MANAGER', 'MANAGER', 'ADMIN')")
 	Employee newItem(@RequestBody Employee newItem) {
 		return employeeRepository.save(newItem);
 	}
@@ -55,6 +57,7 @@ public class EmployeeController {
 	}
 
 	@PutMapping("/cart/items/{id}")
+	@PreAuthorize("hasAnyAuthority('ASSISTANT_MANAGER', 'MANAGER', 'ADMIN')")
 	Employee replaceItem(@RequestBody Employee newItem, @PathVariable Long id) {
 		return employeeRepository.findById(id).map(item -> {
 			item.setName(newItem.getName());
@@ -76,6 +79,7 @@ public class EmployeeController {
 	 */
 	@CrossOrigin(origins = "http://localhost:3000")
 	@DeleteMapping("/employees/{id}")
+	@PreAuthorize("hasAnyAuthority('ASSISTANT_MANAGER', 'MANAGER', 'ADMIN')")
 	void deleteItem(@PathVariable Long id) {
 		employeeRepository.deleteById(id);
 	}
@@ -87,6 +91,7 @@ public class EmployeeController {
 	 */
 	@CrossOrigin(origins = "http://localhost:3000")
 	@DeleteMapping("/employees")
+	@PreAuthorize("hasAnyAuthority('ASSISTANT_MANAGER', 'MANAGER', 'ADMIN')")
 	void emptyCart() {
 		log.info("hello");
 		employeeRepository.deleteAll();

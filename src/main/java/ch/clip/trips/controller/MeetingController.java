@@ -1,6 +1,8 @@
-package ch.clip.trips.repo;
+package ch.clip.trips.controller;
 
 import ch.clip.trips.ex.TriptNotFoundException;
+import ch.clip.trips.model.Meeting;
+import ch.clip.trips.repo.MeetingRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

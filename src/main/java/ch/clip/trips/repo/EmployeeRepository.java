@@ -1,5 +1,6 @@
 package ch.clip.trips.repo;
 
+import ch.clip.trips.model.Employee;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

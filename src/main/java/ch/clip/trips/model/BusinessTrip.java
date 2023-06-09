@@ -1,4 +1,4 @@
-package ch.clip.trips.repo;
+package ch.clip.trips.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;

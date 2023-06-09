@@ -58,28 +58,28 @@ public class WebSecurityConfig {
     protected UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
 
-        UserDetails user1 = User.withUsername("user1")
+        UserDetails user1 = User.withUsername("Giuanne Sarnataro")
                 .authorities("ADMIN", "STAFF_MEMBER")
                 .passwordEncoder(passwordEncoder::encode)
                 .password("1234")
                 .build();
         manager.createUser(user1);
 
-        UserDetails user2 = User.withUsername("user2")
+        UserDetails user2 = User.withUsername("Sam Sony")
                 .authorities("STAFF_MEMBER")
                 .passwordEncoder(passwordEncoder::encode)
                 .password("1234")
                 .build();
         manager.createUser(user2);
 
-        UserDetails user3 = User.withUsername("user3")
+        UserDetails user3 = User.withUsername("Gino Brambilla")
                 .authorities("ASSISTANT_MANAGER", "STAFF_MEMBER")
                 .passwordEncoder(passwordEncoder::encode)
                 .password("1234")
                 .build();
         manager.createUser(user3);
 
-        UserDetails user4 = User.withUsername("user4")
+        UserDetails user4 = User.withUsername("Joe Santo")
                 .authorities("MANAGER", "STAFF_MEMBER")
                 .passwordEncoder(passwordEncoder::encode)
                 .password("1234")
