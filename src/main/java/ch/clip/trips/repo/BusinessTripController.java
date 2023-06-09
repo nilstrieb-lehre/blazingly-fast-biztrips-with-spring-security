@@ -16,7 +16,6 @@ public class BusinessTripController {
 
 	private final BusinessTripRepository tripRepository;
 	// Aggregate root
-	@CrossOrigin(origins = "*")
 	@GetMapping("/trips")
 	// @RequestMapping(value = "/trips", method = RequestMethod.GET, produces =
 	// "application/json")
